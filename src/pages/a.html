@@ -1,0 +1,498 @@
+<style>
+    .camping-products {
+      background-color: #cfe9c6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+    }
+    
+    .header {
+      justify-content: space-between;
+      align-items: center;
+      background: #fffbf6;
+      width: 100%;
+      display: flex;
+      gap: 40px 100px;
+      flex-wrap: wrap;
+      padding: 0 50px;
+    }
+    
+    @media (max-width: 991px) {
+      .header {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #000;
+      font: 500 35px 'Zen Maru Gothic', sans-serif;
+      padding: 10px 0;
+    }
+    
+    @media (max-width: 991px) {
+      .logo-container {
+        flex-wrap: wrap;
+      }
+    }
+    
+    .logo-image {
+      aspect-ratio: 1;
+      object-fit: contain;
+      width: 80px;
+      border-radius: 50%;
+    }
+    
+    .nav-links {
+      color: #000;
+      text-align: center;
+      font: 400 20px 'Zen Maru Gothic', sans-serif;
+    }
+    
+    .user-profile {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    
+    .user-avatar {
+      width: 50px;
+      border-radius: 50%;
+    }
+    
+    .username {
+      color: #000;
+      font: 500 28px 'Zen Maru Gothic', sans-serif;
+      margin-left: 20px;
+    }
+    
+    .category-nav {
+      color: #b4a59f;
+      margin: 21px 0 0 20px;
+      font: 500 24px 'Zen Maru Gothic', sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .category-nav {
+        max-width: 100%;
+      }
+    }
+    
+    .product-grid {
+      display: flex;
+      margin-top: 21px;
+      width: 100%;
+      max-width: 1215px;
+      align-items: start;
+      gap: 30px 15px;
+      overflow: hidden;
+      font-family: 'Zen Maru Gothic', sans-serif;
+      color: #3b3735;
+      font-weight: 400;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      padding: 8px;
+    }
+    
+    @media (max-width: 991px) {
+      .product-grid {
+        max-width: 100%;
+      }
+    }
+    
+    .product-card {
+      border-radius: 15px;
+      background-color: #fff;
+      display: flex;
+      max-width: 332410px;
+      flex-direction: column;
+      overflow: hidden;
+      justify-content: center;
+      flex: 1;
+      flex-basis: 0%;
+      padding: 15px;
+    }
+    
+    @media (max-width: 991px) {
+      .product-card {
+        white-space: normal;
+      }
+    }
+    
+    .product-image-container {
+      border-radius: 15px;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      color: #ff4747;
+      text-align: center;
+      font: 15px 'PoetsenOne', sans-serif;
+    }
+    
+    .product-image-wrapper {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      aspect-ratio: 1.428;
+      width: 197px;
+      overflow: hidden;
+      padding: 11px 12px 0 39px;
+    }
+    
+    @media (max-width: 991px) {
+      .product-image-wrapper {
+        padding-left: 20px;
+        white-space: normal;
+      }
+    }
+    
+    .product-image {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    
+    .product-badge {
+      aspect-ratio: 0.97;
+      object-fit: contain;
+      width: 30px;
+      border-radius: 11px;
+      align-self: flex-end;
+    }
+    
+    .product-price {
+      position: relative;
+      border-radius: 8px;
+      background-color: #fff;
+      align-self: center;
+      margin-top: 73px;
+      width: 104px;
+      max-width: 100%;
+      padding: 5px 31px;
+    }
+    
+    @media (max-width: 991px) {
+      .product-price {
+        margin-top: 40px;
+        white-space: normal;
+        padding: 0 20px;
+      }
+    }
+    
+    .product-title {
+      margin-top: 11px;
+      width: 100%;
+      overflow: hidden;
+      font-size: 18px;
+      font-weight: 700;
+      text-align: center;
+      padding: 2px 63px;
+    }
+    
+    @media (max-width: 991px) {
+      .product-title {
+        white-space: normal;
+        padding: 0 20px;
+      }
+    }
+    
+    .product-description {
+      align-self: stretch;
+      flex: 1;
+      margin-top: 11px;
+      width: 100%;
+      gap: 8px;
+      font-size: 8px;
+      text-align: center;
+    }
+    
+    @media (max-width: 991px) {
+      .product-description {
+        white-space: normal;
+      }
+    }
+    
+    .buy-button {
+      align-self: center;
+      border-radius: 8.414px;
+      background: #fc9a84;
+      margin-top: 11px;
+      min-height: 21px;
+      gap: 8px;
+      font-size: 16px;
+      color: #fff;
+      padding: 0 8px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    @media (max-width: 991px) {
+      .buy-button {
+        white-space: normal;
+      }
+    }
+    
+    .pagination {
+      display: flex;
+      margin-top: 39px;
+      align-items: center;
+      gap: 19px;
+      color: #fff;
+      text-align: center;
+      justify-content: flex-start;
+      font: 700 24px 'Zen Maru Gothic', sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .pagination {
+        max-width: 100%;
+        white-space: normal;
+      }
+    }
+    
+    .page-number {
+      border-radius: 25px;
+      background: #ada752;
+      align-self: stretch;
+      min-height: 62px;
+      overflow: hidden;
+      width: 79px;
+      margin: auto 0;
+      padding: 14px 0;
+    }
+    
+    @media (max-width: 991px) {
+      .page-number {
+        white-space: normal;
+      }
+    }
+    
+    .page-number-active {
+      background: #ff82d2;
+    }
+    
+    .footer {
+      justify-content: center;
+      background: #98d293;
+      align-self: stretch;
+      display: flex;
+      margin-top: 27px;
+      width: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      color: #fff;
+      text-align: center;
+      padding: 21px 103px;
+      font: 400 20px 'PoetsenOne', sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .footer {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+    
+    .footer-content {
+      flex: 1;
+      width: 100%;
+      padding: 14px 0;
+    }
+    
+    @media (max-width: 991px) {
+      .footer-content {
+        max-width: 100%;
+      }
+    }
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    </style>
+    
+    <section class="camping-products">
+      <header class="header">
+        <div class="logo-container">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7e22e06dc36046a39be848b8619e96502df75ff3f84423e3008f737fe7824440?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="Company Logo" class="logo-image" />
+          <h1 class="visually-hidden">會營ㄛ</h1>
+        </div>
+        <nav class="nav-links">
+          <a href="#spaces">查看空位</a>
+          <a href="#equipment">露營用具</a>
+          <a href="#events">活動情報</a>
+          <a href="#support">客服中心</a>
+        </nav>
+        <div class="user-profile">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2b7b61e080cfcea57ed93163302aae1cbbff4fa447bf2a4dc7aff3e9bc6431b6?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="User Avatar" class="user-avatar" />
+          <span class="username">小八</span>
+        </div>
+      </header>
+    
+      <nav class="category-nav">
+        <a href="#discounts">優惠商品</a>
+        <a href="#recommended">推薦商品</a>
+        <a href="#bestsellers">熱銷商品</a>
+        <a href="#clearance">出清商品</a>
+      </nav>
+    
+      <main class="product-grid">
+        <article class="product-card">
+          <div class="product-image-container">
+            <div class="product-image-wrapper">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8d4bea4ee7a5f33573e5576b365e16b0d802e9d9dd53f0b6567bf312a68f1148?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="露營帳篷" class="product-image" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c2164fba0050960be07d1920be68e26591cf7a1609a4ed5dfbab0d9cb03e8cb5?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="Product Badge" class="product-badge" />
+              <div class="product-price">$1300</div>
+            </div>
+          </div>
+          <h2 class="product-title">露營帳篷</h2>
+          <p class="product-description">標準帳篷營位位於開闊的草地上，適合喜愛戶外露營的個人或小型團體。這裡提供基本的露營設施，讓您在大自然中享受最純粹的露營體驗。</p>
+          <button class="buy-button">立即選購</button>
+        </article>
+    
+        <article class="product-card">
+          <div class="product-image-container">
+            <div class="product-image-wrapper">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9fb3e36a878ed7bf8620a6ce5f76e16aff4feb57dc71d9140de9c199209f0e2?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="睡袋" class="product-image" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8650e028c2544be2becc5e8be2fceace857a4bb02795ef8ba344fe31d827cbd7?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="Product Badge" class="product-badge" />
+              <div class="product-price">$300</div>
+            </div>
+          </div>
+          <h2 class="product-title">睡袋</h2>
+          <p class="product-description">標準帳篷營位位於開闊的草地上，適合喜愛戶外露營的個人或小型團體。這裡提供基本的露營設施，讓您在大自然中享受最純粹的露營體驗。</p>
+          <button class="buy-button">立即選購</button>
+        </article>
+    
+        <article class="product-card">
+          <div class="product-image-container">
+            <div class="product-image-wrapper">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c7611f36802c9a9785c4876e1a628184782978f8aba00cd167de84510197dd14?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="露營床墊" class="product-image" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/90d218b6b9386bd136ba6ca248a6c2cc0cd73225cf9494b62631ac7082e96872?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="Product Badge" class="product-badge" />
+              <div class="product-price">$500</div>
+            </div>
+          </div>
+          <h2 class="product-title">露營床墊</h2>
+          <p class="product-description">標準帳篷營位位於開闊的草地上，適合喜愛戶外露營的個人或小型團體。這裡提供基本的露營設施，讓您在大自然中享受最純粹的露營體驗。</p>
+          <button class="buy-button">立即選購</button>
+        </article>
+    
+        <article class="product-card">
+          <div class="product-image-container">
+            <div class="product-image-wrapper">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8d5f4123901d89725fb05aea77b51bef9af82adff07b53f8fb7b035904d073f8?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="露營燈" class="product-image" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/825b3af05f8be459183d4f90e9589b76fa28b827be3c9a7b3056a207fc3d8997?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="Product Badge" class="product-badge" />
+              <div class="product-price">$120</div>
+            </div>
+          </div>
+          <h2 class="product-title">露營燈</h2>
+          <p class="product-description">景觀帳篷營位位於營地的觀景點，適合追求美景的露營者。這裡可以俯瞰山谷景色，早晨還能欣賞日出，適合喜愛拍照和放鬆的旅客。</p>
+          <button class="buy-button">立即選購</button>
+        </article>
+    
+        <article class="product-card">
+          <div class="product-image-container">
+            <div class="product-image-wrapper">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a03f85c9856aef9f38069e70a281ab3a8a8ca9856c602dad7f26cb3b6f62c34?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="戶外炊具" class="product-image" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/af9ff534413bcd1069c055ca129de4b048457a8f398fd29e70b9bea6ec37bb01?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="Product Badge" class="product-badge" />
+              <div class="product-price">$6800</div>
+            </div>
+          </div>
+          <h2 class="product-title">戶外炊具</h2>
+          <p class="product-description">豪華帳篷營位為希望在大自然中保持舒適生活的露營者設計。這些營位配有更大的空間和私人設施，適合家庭或小團體享受更高端的露營體驗。</p>
+          <button class="buy-button">立即選購</button>
+        </article>
+    
+        <article class="product-card">
+          <div class="product-image-container">
+            <div class="product-image-wrapper">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7ced9e61cdff4f6efc08047c4bf0545b2f94aae6c448943462942b362445a9c8?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="露營帳篷" class="product-image" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e3cf0118fdbbeaa13abeee24c1582bd75028345654f549d8f2a1ef3abf1ca7f5?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="Product Badge" class="product-badge" />
+              <div class="product-price">$1300</div>
+            </div>
+          </div>
+          <h2 class="product-title">露營帳篷</h2>
+          <p class="product-description">標準帳篷營位位於開闊的草地上，適合喜愛戶外露營的個人或小型團體。這裡提供基本的露營設施，讓您在大自然中享受最純粹的露營體驗。</p>
+          <button class="buy-button">立即選購</button>
+        </article>
+    
+        <article class="product-card">
+          <div class="product-image-container">
+            <div class="product-image-wrapper">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3cac5c4d6b01cede6b891f42037cd347370406486e45fec29069c7608732be79?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="睡袋" class="product-image" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3d77e959bf9f22446a984693e050e380989ef6ba6e2cbc89cb8f00bd01621d60?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="Product Badge" class="product-badge" />
+              <div class="product-price">$300</div>
+            </div>
+          </div>
+          <h2 class="product-title">睡袋</h2>
+          <p class="product-description">標準帳篷營位位於開闊的草地上，適合喜愛戶外露營的個人或小型團體。這裡提供基本的露營設施，讓您在大自然中享受最純粹的露營體驗。</p>
+          <button class="buy-button">立即選購</button>
+        </article>
+    
+        <article class="product-card">
+          <div class="product-image-container">
+            <div class="product-image-wrapper">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9e0fbcd4ad42e9882d1b16b4d005f0158b6869e2cddefe021dd9b237953e966?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="露營床墊" class="product-image" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3b5643063633e32e1b2ceae0781254f262dc3a32fbef6e68aa408b5f643f4e84?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="Product Badge" class="product-badge" />
+              <div class="product-price">$500</div>
+            </div>
+          </div>
+          <h2 class="product-title">露營床墊</h2>
+          <p class="product-description">標準帳篷營位位於開闊的草地上，適合喜愛戶外露營的個人或小型團體。這裡提供基本的露營設施，讓您在大自然中享受最純粹的露營體驗。</p>
+          <button class="buy-button">立即選購</button>
+        </article>
+    
+        <article class="product-card">
+          <div class="product-image-container">
+            <div class="product-image-wrapper">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/393dd9ad8e02be5330852fd6be0936735f96f2b2c4719576b191491f619dd934?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="露營燈" class="product-image" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/379ab4f2dd186ea2e1faa03eec31cf4114c6d072a5b2a74e6b85501e386f5596?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="Product Badge" class="product-badge" />
+              <div class="product-price">$120</div>
+            </div>
+          </div>
+          <h2 class="product-title">露營燈</h2>
+          <p class="product-description">景觀帳篷營位位於營地的觀景點，適合追求美景的露營者。這裡可以俯瞰山谷景色，早晨還能欣賞日出，適合喜愛拍照和放鬆的旅客。</p>
+          <button class="buy-button">立即選購</button>
+        </article>
+    
+        <article class="product-card">
+          <div class="product-image-container">
+            <div class="product-image-wrapper">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c129bc9502ecb8aaba18ae54b2b9b2c6629fa36e9cc86140c6f2f98f70b11a50?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="戶外炊具" class="product-image" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d73f92dacd95b53248a3ad98611d8c3b22cfe079667d7d7935f205efee798345?placeholderIfAbsent=true&apiKey=ff1208b97220405794b61b476c6106d1" alt="Product Badge" class="product-badge" />
+              <div class="product-price">$6800</div>
+            </div>
+          </div>
+          <h2 class="product-title">戶外炊具</h2>
+          <p class="product-description">豪華帳篷營位為希望在大自然中保持舒適生活的露營者設計。這些營位配有更大的空間和私人設施，適合家庭或小團體享受更高端的露營體驗。</p>
+          <button class="buy-button">立即選購</button>
+        </article>
+      </main>
+    
+      <nav class="pagination" aria-label="Page navigation">
+        <a href="#page1" class="page-number" aria-label="Page 1">1</a>
+        <a href="#page2" class="page-number" aria-label="Page 2">2</a>
+        <a href="#page3" class="page-number page-number-active" aria-label="Page 3 (Current)">3</a>
+        <span class="page-number" aria-hidden="true">...</span>
+        <a href="#page10" class="page-number" aria-label="Page 10">10</a>
+      </nav>
+    
+      <footer class="footer">
+        <div class="footer-content">
+          © 2024 會營ㄛ | Campwinoh Campground
+        </div>
+      </footer>
+    </section>
