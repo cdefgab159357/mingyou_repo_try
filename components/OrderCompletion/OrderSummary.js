@@ -149,7 +149,7 @@ const OrderSummary = () => {
           display: flex;
           margin-top: 20px;
           min-height: 104px;
-          width: 358px;
+          width: 345px;
           max-width: 100%;
           flex-direction: column;
           align-items: center;

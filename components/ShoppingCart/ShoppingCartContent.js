@@ -19,7 +19,7 @@ function ShoppingCartContent() {
         .content {
           display: flex;
           margin-top: 118px;
-          width: 100%;
+          width: 90%;
           flex-direction: column;
           padding: 0 44px;
         }

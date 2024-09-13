@@ -9,19 +9,24 @@ const StepIndicator = () => {
       <div className="step-by-step">
         <div className="step-numbers">
           <div className="step-line">
-            <div className="step-number">1</div>
+            <div className="step-number">
+              <div className="step-numbermove">1</div>
+            </div>
+            <div className="step-label-start">選擇方案</div>
             <div className="step-line-active" />
-            <div className="step-number">2</div>
+            <div className="step-number">
+            <div className="step-numbermove">2</div>
+            </div>
+            <div className="step-label-end">填寫資料</div>
             <div className="step-line-inactive" />
-            <div className="step-number">3</div>
+            <div className="step-number">
+            <div className="step-numbermove">3</div>
+            </div>
+            <div className="step-label">完成付款</div>
           </div>
         </div>
       </div>
-      <div className="step-label">完成付款</div>
-      <div className="step-labels">
-        <div className="step-label-start">選擇方案</div>
-        <div className="step-label-end">填寫資料</div>
-      </div>
+      <div className="step-labels"></div>
       <style jsx>{`
         .step-container {
           align-self: center;
@@ -32,6 +37,7 @@ const StepIndicator = () => {
           max-width: 1200px;
           flex-direction: column;
           white-space: nowrap;
+          margin-bottom: 20px;
         }
         @media (max-width: 991px) {
           .step-container {
@@ -81,15 +87,21 @@ const StepIndicator = () => {
           }
         }
         .step-number {
-          border-radius: 11.618px;
+          border-radius: 50px;
           background: var(--pink, #ff7fcd);
           align-self: stretch;
           min-height: 23px;
           width: 23px;
           height: 23px;
           margin: auto 0;
-          padding: 0 5px;
+          padding: 0 0px;
         }
+        .step-numbermove {
+          position: relative;
+          top: 2.5px; 
+          left: 6.5px; 
+        }
+
         @media (max-width: 991px) {
           .step-number {
             white-space: initial;

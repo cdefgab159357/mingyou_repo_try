@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "@/components/Header";
+import Header from "../../components/Header";
 import SearchBar from "@/components/CampingStore/SearchBar";
 import ProductFilter2 from "@/components/CampingStore/ProductFilter2";
 import ProductCategories from "@/components/CampingStore/ProductCategories";

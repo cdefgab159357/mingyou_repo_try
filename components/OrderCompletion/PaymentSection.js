@@ -26,11 +26,11 @@ const PaymentSection = () => {
           <div className="method-title">付款方式</div>
           <div className="method-options">
             <div className="payment-option">
-              <div className="radio-button">
+            
                 <div className="radio-outer">
                   <div className="radio-inner" />
                 </div>
-              </div>
+              
               <div className="option-label">信用卡</div>
             </div>
           </div>

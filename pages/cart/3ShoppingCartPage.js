@@ -17,6 +17,8 @@ function ShoppingCartPage() {
           background-color: #cfe9c6;
           display: flex;
           flex-direction: column;
+          align-items: center;
+          overflow: hidden;
         }
       `}</style>
     </div>

@@ -59,6 +59,8 @@ function Header() {
           gap: 12px;
           color: #000;
           font: 500 35px Zen Maru Gothic, sans-serif;
+          margin-left: 30px;
+
         }
         .logo-image {
           width: 80px;
@@ -93,6 +95,8 @@ function Header() {
         .username {
           color: #000;
           font: 500 28px Zen Maru Gothic, sans-serif;
+          margin-right: 30px;
+
         }
         @media (max-width: 991px) {
           .site-header {

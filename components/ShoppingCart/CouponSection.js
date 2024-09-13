@@ -35,6 +35,7 @@ function CouponSection() {
           margin-top: 46px;
         }
         .sectionTitle {
+          margin-top:0px;
           border-radius: 10px 10px 0 0;
           background-color: #198ea6;
           color: #fff;

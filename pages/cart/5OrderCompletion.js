@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "@/components/Header";
-import ProgressBar from "@/components/OrderCompletion/ProgressBar";
+import StepIndicator from "@/components/OrderCompletion/StepIndicator";
 import PaymentSection from "@/components/OrderCompletion/PaymentSection";
 import OrderSummary from "@/components/OrderCompletion/OrderSummary";
 import Footer from "@/components/Footer";
@@ -9,7 +9,7 @@ const OrderCompletion = () => {
   return (
     <div className="order-completion">
       <Header />
-      <ProgressBar />
+      <StepIndicator />
       <main className="main-content">
         <div className="content-wrapper">
           <PaymentSection />
@@ -22,6 +22,8 @@ const OrderCompletion = () => {
           background-color: #cfe9c6;
           display: flex;
           flex-direction: column;
+          align-items: center;
+          overflow: hidden;
         }
         .main-content {
           display: flex;

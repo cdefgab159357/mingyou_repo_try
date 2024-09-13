@@ -31,6 +31,8 @@ const CheckoutInfo = () => {
           background-color: #cfe9c6;
           display: flex;
           flex-direction: column;
+          align-items: center;
+          overflow: hidden;
         }
         .main-content {
           display: flex;
